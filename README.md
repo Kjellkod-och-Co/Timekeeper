@@ -1,16 +1,7 @@
----
-title: Discord bot
-description: A Discord bot written in JavaScript
-tags:
-  - discord.js
-  - javascript
----
+# Timekeeper 2.0
 
-# Discord.js Example
+A bot built with [discord.js](https://discord.js.org/#/).
 
-This example starts a Discord bot using [discord.js](https://discord.js.org/#/).
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/jX0xQo)
 
 ## ✨ Features
 
@@ -20,8 +11,7 @@ This example starts a Discord bot using [discord.js](https://discord.js.org/#/).
 ## 💁‍♀️ How to use
 
 - Install dependencies `yarn`
-- Connect to your Railway project `railway link`
-- Start the bot `railway run yarn dev`
+- Start the bot `yarn dev`
 
 ## 📝 Notes
 

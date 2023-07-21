@@ -1,8 +1,8 @@
 {
-  "name": "discordjs",
+  "name": "timekeeper",
   "version": "1.0.0",
   "main": "src/index.js",
-  "author": "Jake Runzer",
+  "author": "Max Carlquist",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon .",
@@ -11,8 +11,12 @@
   "dependencies": {
     "@discordjs/builders": "^0.12.0",
     "@discordjs/rest": "^0.1.0-canary.0",
+    "@supabase/supabase-js": "*",
     "discord-api-types": "^0.24.0",
-    "discord.js": "^13.6.0"
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4",
+    "node-cron": "*"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

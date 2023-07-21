@@ -1,5 +1,6 @@
 const { REST } = require("@discordjs/rest"); // Define REST.
 const { Routes } = require("discord-api-types/v9"); // Define Routes.
+const  everyDay  = require('../cron');
 const fs = require("fs"); // Define fs (file system).
 const { Client, Intents, Collection } = require("discord.js"); // Define Client, Intents, and Collection.
 const client = new Client({
@@ -7,15 +8,19 @@ const client = new Client({
 }); // Connect to our discord bot.
 const commands = new Collection(); // Where the bot (slash) commands will be stored.
 const commandarray = []; // Array to store commands for sending to the REST API.
-const token = process.env.DISCORD_TOKEN; // Token from Railway Env Variable.
+const token = process.env.D_TOKEN;
 // Execute code when the "ready" client event is triggered.
 client.once("ready", () => {
+  
+  // TODO: Make this every day function 1) read birthdays from server 2) say happy birthday if a birthday exists
+  everyDay();
+
   const commandFiles = fs
     .readdirSync("src/Commands")
     .filter(file => file.endsWith(".js")); // Get and filter all the files in the "Commands" Folder.
 
   // Loop through the command files
-  for (const file of commandFiles) {
+  for (const file of commandFiles) {    
     const command = require(`./Commands/${file}`); // Get and define the command file.
     commands.set(command.data.name, command); // Set the command name and file for handler to use.
     commandarray.push(command.data.toJSON()); // Push the command data to an array (for sending to the API).
