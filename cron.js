@@ -27,7 +27,7 @@ client.once('ready', async  (c)  => {
         console.log("Server not found && BOT does not have access");
     }
 
-    const channel = server.channels.cache.get(TEST_channelId);
+    const channel = server.channels.cache.get(channelId);
     if (!channel || channel.type !== "text") {
         console.log("Channel not found && BOT does not have access to the server" + channelId);
     }
